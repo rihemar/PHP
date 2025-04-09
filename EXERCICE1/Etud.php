@@ -30,30 +30,24 @@ class Etudiant {
     public function Moyenne():float{
         $moyenne=0;
         foreach($this->notes as $note){
-            $moyenne+=$note;
-        }
+            $moyenne+=$note;}
         return $moyenne/count($this->notes);
     }
+
     public function  AdmisOuNon():void{
         if($this->Calcule_moy()<10){
             echo "non Admis";
         }else{
             echo "Admis";
-        }
-    }
-    
-
-
-}
+        }}}
 $Aymen =new Etudiant("Aymen", 11, 13, 18, 7,10,13,2,5,1);
 $Skander=new Etudiant( "Skander",15,9,8,16);
-$Hamza=new Etudiant( "Hamza",15,9,12,20,19,11,4,16);
 
+//actual changes to index.php
 
 $LesEtudiant=array();
 $LesEtudiant[0]=$Aymen;
 $LesEtudiant[1]=$Skander;
-$LesEtudiant[2]=$Hamza;
 echo "<div class='container'>";
 echo "<div class='row'>";
 
@@ -65,23 +59,12 @@ foreach ( $LesEtudiant as $Etudiant){
     foreach($Etudiant->getNotes() as $Note){
         echo "<div class='note p-3 card rounded-0 '>";
         echo $Note;
-        echo"</div>";
-
-    }
+        echo"</div>";}
     echo"<div class = 'moyenne p-3 card'>";
-    echo 'Votre moyenne est '.$Etudiant->Calcule_moy();
+    echo 'Moyenne = '.$Etudiant->Moyenne();
     echo"</div>";
-
-echo"</div>";
-}
+echo"</div>";}
 echo "</div>";
 echo "</div>";
-
-
-
-
-
-
-
 
 ?>
